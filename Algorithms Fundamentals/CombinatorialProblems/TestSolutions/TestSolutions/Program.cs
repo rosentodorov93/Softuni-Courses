@@ -1,30 +1,44 @@
-﻿var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
+﻿//var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
-Reverse(input, 0);
 
-void Reverse(int[] input, int n)
+int[] a = new int[6] { 1,  2, 3, 4, 3, 6 };
+
+solution(a);
+
+
+bool solution(int[] sequence)
 {
-    if (n >= input.Length)
+    int left = 0;
+    int right = sequence.Length - 1;
+    bool result = true;
+    while (true)
     {
-        return;
-    }
-    Reverse(input, n + 1);
-    Console.Write(input[n] + " ");
-}
-
-int solution(int[] inputArray)
-{
-    int maxProduct = int.MinValue;
-    int currentProduct = int.MinValue;
-
-    for (int i = 0; i < inputArray.Length - 1; i++)
-    {
-        currentProduct = inputArray[i] * inputArray[i + 1];
-        if (currentProduct > maxProduct)
+        if (left + 1 == right)
         {
-            maxProduct = currentProduct;
+            if (left + 2 > sequence.Length - 1 || sequence[left + 2] > sequence[left])
+            {
+                break;
+            }
+            if (left - 1 >= 0 && sequence[left - 1] >= sequence[right])
+            {
+                result = false;
+            }
+            break;
+        }
+        if (sequence[left + 1] <= sequence[left] && sequence[right - 1] >= sequence[right])
+        {
+            result = false;
+            break;
+        }
+
+        if (sequence[left + 1] > sequence[left])
+        {
+            left++;
+        }
+        if (sequence[right - 1] < sequence[right])
+        {
+            right--;
         }
     }
-
-    return maxProduct;
+    return result;
 }

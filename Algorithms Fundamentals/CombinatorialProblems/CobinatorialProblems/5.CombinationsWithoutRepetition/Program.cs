@@ -33,7 +33,7 @@ namespace _5.CombinationsWithoutRepetition
             {
 
                 combinations[index] = elements[i];
-                GenereateCombinations(index + 1, i + 1);
+                GenereateCombinations(index + 1, i);
             }
         }
     }
