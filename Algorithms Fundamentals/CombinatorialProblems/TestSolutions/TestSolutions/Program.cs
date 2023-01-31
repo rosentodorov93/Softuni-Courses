@@ -1,44 +1,51 @@
 ﻿//var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
 
-int[] a = new int[6] { 1,  2, 3, 4, 3, 6 };
+int n = int.Parse(Console.ReadLine());
 
-solution(a);
+int[,] matrix = new int[n, n];
 
-
-bool solution(int[] sequence)
+for (int row = 0; row < n; row++)
 {
-    int left = 0;
-    int right = sequence.Length - 1;
-    bool result = true;
-    while (true)
-    {
-        if (left + 1 == right)
-        {
-            if (left + 2 > sequence.Length - 1 || sequence[left + 2] > sequence[left])
-            {
-                break;
-            }
-            if (left - 1 >= 0 && sequence[left - 1] >= sequence[right])
-            {
-                result = false;
-            }
-            break;
-        }
-        if (sequence[left + 1] <= sequence[left] && sequence[right - 1] >= sequence[right])
-        {
-            result = false;
-            break;
-        }
+    int[] currentRow = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
-        if (sequence[left + 1] > sequence[left])
+    for (int col = 0; col < n; col++)
+    {
+        matrix[row, col] = currentRow[col];
+    }
+
+}
+
+solution(matrix);
+
+
+
+void solution(int[,] matrix)
+{
+    int[,] result = new int[matrix.GetLength(0), matrix.GetLength(0)];
+
+    for (int row = 0; row < result.GetLength(0); row++)
+    {
+        int count = 0;
+        for (int col = 0; col < result.GetLength(1); col++)
         {
-            left++;
-        }
-        if (sequence[right - 1] < sequence[right])
-        {
-            right--;
+            result[col, (matrix.GetLength(1) - 1) - row] = matrix[row, col];
         }
     }
-    return result;
+
+    Print(result);
+}
+
+void Print(int[,] result)
+{
+    for (int row = 0; row < result.GetLength(0); row++)
+    {
+        for (int col = 0; col < result.GetLength(1); col++)
+        {
+            Console.Write(result[row,col] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+    Console.WriteLine();
 }
