@@ -1,51 +1,102 @@
 ﻿//var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
 
-int n = int.Parse(Console.ReadLine());
+int[] array = new int[] { 73, 74, 75, 71, 69, 72, 76, 73 };
 
-int[,] matrix = new int[n, n];
 
-for (int row = 0; row < n; row++)
+Console.WriteLine(string.Join(" ", DailyTemperatures(array)));
+
+
+int FindMin(int[] nums)
 {
-    int[] currentRow = Console.ReadLine().Split().Select(int.Parse).ToArray();
-
-    for (int col = 0; col < n; col++)
+    if (nums.Length == 1)
     {
-        matrix[row, col] = currentRow[col];
+        return 1;
     }
 
+    int left = 0;
+    int right = nums.Length - 1;
+    int min = int.MaxValue;
+
+    while (left <= right)
+    {
+        if (nums[left] < nums[right])
+        {
+            min = Math.Min(nums[left], min);
+            break;
+        }
+
+        int middle = (left + right) / 2;
+
+        min = Math.Min(nums[middle], min);
+
+        if (nums[left] <= nums[middle])
+        {
+            left = middle + 1;
+        }
+        else
+        {
+            right = middle - 1;
+        }
+
+    }
+
+    return min;
 }
 
-solution(matrix);
 
-
-
-void solution(int[,] matrix)
+ int LongestConsecutive(int[] nums)
 {
-    int[,] result = new int[matrix.GetLength(0), matrix.GetLength(0)];
-
-    for (int row = 0; row < result.GetLength(0); row++)
+    if (nums.Length == 0)
     {
-        int count = 0;
-        for (int col = 0; col < result.GetLength(1); col++)
-        {
-            result[col, (matrix.GetLength(1) - 1) - row] = matrix[row, col];
-        }
+        return 0;
     }
 
-    Print(result);
+    Array.Sort(nums);
+    int count = 1;
+    int maxCount = 1;
+    for (int i = 0; i < nums.Length - 1; i++)
+    {
+        if (nums[i] + 1 == nums[i + 1])
+        {
+            count++;
+            if (count > maxCount)
+            {
+                maxCount = count;
+            }
+        }
+
+        if (nums[i + 1] > nums[i])
+        {
+            count = 1;
+        }
+    }
+    return maxCount;
 }
 
-void Print(int[,] result)
+ int[] DailyTemperatures(int[] temperatures)
 {
-    for (int row = 0; row < result.GetLength(0); row++)
+    int[] result = new int[temperatures.Length];
+
+    for (int i = 0; i < temperatures.Length - 1; i++)
     {
-        for (int col = 0; col < result.GetLength(1); col++)
+        int pointer = i + 1;
+        int count = 1;
+
+        while (temperatures[pointer] <= temperatures[i])
         {
-            Console.Write(result[row,col] + " ");
+            count++;
+            pointer++;
+
+            if (pointer >= temperatures.Length)
+            {
+                count = 0;
+                break;
+            }
         }
-        Console.WriteLine();
+
+        result[i] = count;
     }
-    Console.WriteLine();
-    Console.WriteLine();
+
+    return result;
 }
