@@ -1,4 +1,8 @@
-﻿namespace _3.CyclesInGraph
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace _3.CyclesInGraph
 {
     public class Program
     {
