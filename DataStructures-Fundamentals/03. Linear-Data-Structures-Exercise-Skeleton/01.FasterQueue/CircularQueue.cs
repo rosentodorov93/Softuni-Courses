@@ -6,36 +6,81 @@
 
     public class CircularQueue<T> : IAbstractQueue<T>
     {
-        public int Count => throw new NotImplementedException();
+
+        private T[] items;
+        private int startIndex;
+        private int endIndex;
+        public CircularQueue(int capacity = 4)
+        {
+            items = new T[capacity];
+        }
+        public int Count { get; private set; }
 
         public T Dequeue()
         {
-            throw new NotImplementedException();
+            if (Count == 0)
+            {
+                throw new InvalidOperationException();
+            }
+            var value = items[startIndex];
+            startIndex = (startIndex + 1) % items.Length;
+            Count--;
+            return value;
         }
 
         public void Enqueue(T item)
         {
-            throw new NotImplementedException();
-        }
+            if (Count == items.Length)
+            {
+                Grow();
+            }
 
-        public IEnumerator<T> GetEnumerator()
-        {
-            throw new NotImplementedException();
+            items[endIndex] = item;
+            endIndex = (endIndex + 1) % items.Length;
+            Count++;
+            
         }
-
         public T Peek()
         {
-            throw new NotImplementedException();
+            if (Count == 0)
+            {
+                throw new InvalidOperationException();
+            }
+
+            return items[startIndex];
         }
 
         public T[] ToArray()
         {
-            throw new NotImplementedException();
+            return CopyElements(new T[Count]);
+        }
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                yield return items[(startIndex + i) % items.Length];
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
+        }
+        private void Grow()
+        {
+            this.items = CopyElements(new T[items.Length * 2]);
+            startIndex = 0;
+            endIndex = Count;
+        }
+
+        private T[] CopyElements(T[] resultArrray)
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                resultArrray[i] = items[(startIndex + i) % items.Length];
+            }
+
+            return resultArrray;
         }
     }
 
