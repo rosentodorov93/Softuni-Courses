@@ -115,6 +115,7 @@
         public void RemoveAt(int index)
         {
             ValidateIndex(index);
+
             Remove(items[(Count - index) - 1]);
         }
 
