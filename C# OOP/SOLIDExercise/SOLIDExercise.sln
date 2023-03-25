@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLIDExercise", "SOLIDExercise\SOLIDExercise.csproj", "{97FA2862-D3C2-4925-BFFC-42ABD64B0729}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97FA2862-D3C2-4925-BFFC-42ABD64B0729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97FA2862-D3C2-4925-BFFC-42ABD64B0729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97FA2862-D3C2-4925-BFFC-42ABD64B0729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97FA2862-D3C2-4925-BFFC-42ABD64B0729}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F47A24CD-4B82-4D46-94A6-40898CC6BB60}
+	EndGlobalSection
+EndGlobal
