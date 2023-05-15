@@ -1,0 +1,144 @@
+/*dark color - #274c5c*/
+/*bg color - #274c5c*/
+/* light gray #f9f7f8; */
+/* greeen #7eb693*/
+
+body{
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header{
+    background-color: #ffffff;
+    padding: 48px 86px;
+    color: #274c5c;
+    display: flex;
+    align-items: center;
+    /* position: sticky; */
+    gap: 12px;
+    top: 0px;
+}.header img{
+    width: 30px;
+}
+.header .nav{
+    margin-left: auto;
+    margin-right: auto;
+}
+.header .nav-items{
+    display: flex;
+    gap: 24px;
+}
+.header .nav-item{
+    font-weight: 600;
+}
+.header .search-bar{
+    height: 40px;
+    background-color: #fafafa;
+    border: 1px solid #fafafa;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+.header .search-bar input{
+    background-color: transparent;
+    padding: 4px 8px;
+    outline: none;
+    border: 0;
+    flex: 1;
+}
+.header .search-bar button{
+    border-radius: 50%;
+    background-color: #7eb693;
+    border: 0;
+    cursor: pointer;
+}
+.header .cart{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+.header .cart p{
+    padding: 4px 8px;
+}
+.header button{
+    background-color: #274c5c;
+    border: 0;
+    border-radius: 50%;
+    padding: 2px;
+}
+.header button i{
+    color: #ffffff;
+    padding: 6px;
+}
+
+/* Welcome Section */
+
+.welcome{
+    position: relative;
+    text-align: center;
+}
+.welcome h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #274c5c;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* About us Section */
+.about{
+    padding: 72px 48px;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    color: #274c5c;
+}
+.about img{
+    width: 90%;
+}
+.about .content{
+    width: 65%;
+    
+}
+.about .content span{
+    color: #7eb693;
+    margin-bottom: 12px;
+} 
+.about .content .title{
+    font-size: 36px;
+    margin-bottom: 12px;
+} 
+.about .content p{
+    margin-bottom: 16px;
+    
+} 
+.about .links{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.about .link{
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+} 
+.about .link img{
+    width: 30px;
+} 
+.about .link p{
+    font-weight: bold;
+} 
+.about button{
+    background-color: #274c5c;
+    padding: 12px 24px;
+    color: #ffffff;
+    border-color: #274c5c;
+    border-radius: 8px;
+}
