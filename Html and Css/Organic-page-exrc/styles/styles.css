@@ -216,3 +216,146 @@ body{
     padding: 12px;
     border-radius: 12px;
 }
+.how .asset p{
+    width: 100%
+    ;
+}
+
+/* Team Section */
+.team{
+    padding: 72px 48px;
+}
+
+.team header{
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 36px;
+}
+.team header span{
+    color: #7eb693;
+    margin-bottom: 12px;
+}
+.team header h3{
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+.team .cards{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    max-width: 70%;
+    margin: auto;
+}
+.team .card{
+    width: 300px;
+    background-color: #f9f7f8;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.team .card .thumbnail{
+    height: 300px;
+}
+.team .card .thumbnail img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.team .card .content{
+    padding: 18px;
+}
+.team .card .content .details{
+    display: flex;
+    align-items: center;
+}
+.team .card .content .details ul{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+}
+.team .card .content .details span{
+    color: #7eb693;
+}
+
+/* Offers Section */
+
+.offers{
+    padding: 72px 48px;
+    background-color: #274c5c;
+    text-align: center;
+    color: #ffffff;
+}
+.offers header{
+    margin-top: 48px;
+}
+.offers header span{
+    color: #7eb693;
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+.offers header h3{
+    font-size: 36px;
+}
+.offers-list{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1080px;
+    margin: 24px auto;
+
+}
+.offer{
+    width: 260px;
+    height: 260px;
+    border-radius: 22px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.offer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Subscribe Section */
+
+.subscribe{
+    padding: 72px 48px;
+    position: relative;
+}
+
+.sub-content img{
+    width: 80%;
+    margin: auto;
+}
+.sub-details{
+    width: 65%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+}
+.sub-details h3{
+    font-size: 36px;
+    color: #ffffff;
+    width: 40%;
+}
+.sub-details input{
+    padding: 20px;
+    border-radius: 16px;
+    border: 0;
+    outline: none;
+}
+.sub-details button{
+    padding: 20px;
+    background-color: #274c5c;
+    color: #ffffff;
+    border-radius: 16px;
+    border: 0;
+    outline: none;
+}
